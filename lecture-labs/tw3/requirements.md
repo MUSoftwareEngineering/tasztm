@@ -22,6 +22,8 @@
 
 ## System Requirements
   1. Database System
+    - Contain keywords to search for images (like trees and rivers)
   2. Web Browser
-  3. Storage System
-  4. Authentication/User Type
+  3. Storage System to Contain Photos/Articles
+  4. Authentication
+    - Be able to tell what kind of user is accessing the photos
