@@ -3,19 +3,22 @@
 ## Users/Stakeholders
   1. Editor
     a. Functional Requirements
-      - Access photos to use on articles
-      - Get photo information
+      - See photos similar to the photos they are used to editing
+      - Access photos to use on articles that they are editing
+      - Get photo information (photographer, date, etc.)
 
   2. Photographer
     a. Functional Requirements
       - Upload photos
       - Remove photos (that they own)
-      - Edit photos
+      - Edit photos (that they own)
+      - Organize photos
 
   3. Journalists
     a. Functional Requirements
-      - Access photos
-      - Access photo information
+      - Access photos to use in articles
+      - Access photo information for citation purposes
+      - Ability to write articles
 
 ## System Requirements
   1. Database System
