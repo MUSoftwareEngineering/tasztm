@@ -28,13 +28,17 @@ def createSection(course, num, sectionSet):
     allSections = []
     courseSections = course["sections"].copy()
 
+    #This makes a big list of all students in all sections
     for sec in courseSections:
-        allSections.extend(sec)
+        allSections.extend(sec["students"])
 
-    allSections.extend(newSection)
+    #We then add our newest section's students to this big list
+    allSections.extend(sectionSet)
 
     allSet = set(allSections)
 
+    #If it's compared to a set made with the same list, they will have equal lengths
+    #if no duplicates are present
     if (len(allSet) == len(allSections)):
         course["sections"].append(newSection)
         return newSection

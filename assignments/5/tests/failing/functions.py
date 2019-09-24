@@ -14,10 +14,6 @@ def createStudent(id, hours, files):
 
     student = {"id" : id, "creditHours" : hours, "isFullTime" : False, "files" : files}
 
-    if(student["creditHours"] >= 12):
-        #student["isFullTime"] = True
-        student["isFullTime"] = False
-
     return student
 
 def uploadStudentFile(student, file):
@@ -31,7 +27,7 @@ def createSection(course, num, sectionSet):
 def downloadSubmissions(course, user):
     #this should pull the course from somewhere by name and get the downloadSubmissions
     #for this to work, it would also need to make sure the TA is in the course
-    if (user["role"] == "TA" and course in user["courses"]):
+    if (user["role"] == "TA"):
         return "Lots of submissions"
 
     else:

@@ -40,8 +40,6 @@ def test_verify_unique_sections():
     section2 = functions.createSection(course, 1, ["student3", "student4", "student5"])
     intersect = set(section1["students"]) & set(section2["students"])
 
-    print(course["sections"])
-
     assert len(intersect) == 0
 
 def test_TA_download_submissions():
