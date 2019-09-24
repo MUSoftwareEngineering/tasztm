@@ -24,15 +24,14 @@ def uploadStudentFile(student, file):
         student["files"].append(file)
 
 def createSection(course, num, sectionSet):
-    #in the real system we would get the course and add the set
-    newSection = {"courseName" : course, "number" : num, "students" : sectionSet}
+    newSection = {"courseName" : course["name"], "number" : num, "students" : sectionSet}
     allSections = []
+    courseSections = course["sections"].copy()
 
-    for sec in course["sections"]:
-        print(sec)
+    for sec in courseSections:
         allSections.extend(sec)
 
-    print(allSections)
+    allSections.extend(newSection)
 
     allSet = set(allSections)
 
