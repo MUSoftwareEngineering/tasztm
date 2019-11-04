@@ -1,3 +1,6 @@
+# Individual Requirements Analysis
+Trey Shaw
+
 # Introduction
 
 This program is intended to give technology companies and IT organizations the ability to better assess the overall health of open source projects. By providing various metrics of the development of these projects, companies will be able to make better predictions about their sustainability. With this tool, organizations will be better equipped to make decisions on which open source projects to invest resources into.
