@@ -2,7 +2,7 @@
 
 This will be primarily backend work, but the full stack will likely be used.
 
-(Relating info can be found in issue #403)
+(Relating info can be found in issue [#403](https://github.com/chaoss/augur/issues/403))
 
 ### General Design Goals
 - build and run Augur on a Windows environment
