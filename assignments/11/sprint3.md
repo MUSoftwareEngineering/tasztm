@@ -6,11 +6,11 @@ https://github.com/chaoss/augur/issues/403
 
 First, you will need to enable bash in Windows. Navigate to control panel and find "Turn Windows features on or off". Now enable Windows Subsystem for Linux. (You may need to restart your machine after doing this).
 
-![linux](windowsbash.png)
+![linux](windowsbash.PNG)
 
 Before you can use the subsystem in the command line, you'll need to install a Linux distro in the Microsoft store as well. I'll be using [Ubuntu](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab) for this example.
 
-![ubuntu](ubuntu.png)
+![ubuntu](ubuntu.PNG)
 
 Now that you have the subsystem enabled, and a distro to use, you can launch the subsystem using the "wls" command.
 
