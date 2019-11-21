@@ -12,7 +12,7 @@ Before you can use the subsystem in the command line, you'll need to install a L
 
 ![ubuntu](ubuntu.PNG)
 
-Now that you have the subsystem enabled, and a distro to use, you can launch the subsystem using the "wls" command.
+Now that you have the subsystem enabled, and a distro to use, you can launch the subsystem using the ```wsl``` command.
 
 Your Windows file system is still here too so you can access all of your other files. Your C:/ directory can be found at /mnt/c/.
 
