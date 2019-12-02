@@ -77,7 +77,20 @@ sudo -i -u postgres
 
 psql
 ```
-From here, you can run the commands to create the user and database (not sure if I need to put these commands or not in this document). If you're having trouble with the postgres setup, [this](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04) is a really nice walkthrough.
+From here, you can run the commands to create the user and database.
+```
+create database augur;
+create user augur with encrypted password 'mypass';
+grant all privileges on database augur to augur;
+```
+
+Postgres has the default port 5432. If you had postgres setup on the Windows side, then it will likely be on port 5433 instead. Check the port on the WSL command line with
+```
+sudo netstat -plunt | grep postgres
+```
+before installing Augur. You will need to know this for later.
+
+If you're having trouble with the postgres setup, [this](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04) is a really nice walkthrough.
 
 When you go to Augur install, you'll need to create the database and user first, and select option 2.
 
@@ -96,6 +109,11 @@ source newaugur/bin/activate
 
 Navigate to where you cloned the Augur repository. From the Augur directory, you can run ```make install``` to start the Augur installation.
 
-Augur should now install just like on a Unix system.
+Augur should now install just like on a Unix system. Make sure when it asks you if you'd like to create a database to select option 2, which will use the database you created earlier.
 
-NOTE: You may get errors on the install if you cloned Augur using Windows. You may have to make sure that the scripts in augur/util/scripts/install all are using Unix line endings. If they aren't you can easily change them in a text editor.
+Once everything is done, the frontend will likely not work immediately. This is because the default server address is set to 0.0.0.0, which scares and confuses windows. Go on over to augur.config.json in the Augur root directory. Find the key "Server" and set its "host" value to "localhost". Now in your python virtual environment (within WSL), in the Augur directory, run ```make rebuild``` to update this setting. Run the front and backends after this, and you should have a working Augur installation on Windows!
+
+NOTE: You may get errors on the install if you cloned Augur using Windows and not WSL. You may have to make sure that the scripts in augur/util/scripts/install all are using Unix line endings. If they aren't you can easily change them in a text editor. This is usually in the bottom right, and should look something like this (LF is Unix).
+![lineendings](images/lineendings.PNG)
+
+If it says CRLF, then you will need to change it.
