@@ -8,7 +8,7 @@ First, you will need to enable bash in Windows. Navigate to control panel and fi
 
 ![linux](images/windowsbash.PNG)
 
-Before you can use the subsystem in the command line, you'll need to install a Linux distro in the Microsoft store as well. I'll be using [Ubuntu](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab) for this example.
+Before you can use the subsystem in the command line, you'll need to install a Linux distro in the Microsoft store as well. I'll be using [Ubuntu](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab) for this example. The commands below will be different depending on the distro you go with.
 
 ![ubuntu](images/ubuntu.PNG)
 
@@ -56,7 +56,7 @@ nvm install --lts
 
 ## PostgreSQL Setup
 
-You will need PostgreSQL on the linux subsystem for this to work. You can install [PostgreSQL](https://www.postgresql.org/download/windows/) for Windows if you want to use pgAdmin, but make sure to know the server information for the Linux installation when you run Augur.
+You will need PostgreSQL on the linux subsystem for this to work. You can install [PostgreSQL](https://www.postgresql.org/download/windows/) for Windows if you want to use pgAdmin. This will automatically install postgres on the Windows side, so you will have postgres running in two places, Windows and WSL.
 
 Now go into the subsystem using ```wsl``` and run the following:
 ```
