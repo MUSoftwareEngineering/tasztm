@@ -121,7 +121,7 @@ Augur should now install just like on a Unix system. Make sure when it asks you 
 ### Potential (Likely) Issues
 Once everything is done, the frontend will likely not work immediately. This is because the default server address is set to 0.0.0.0, which scares and confuses windows. Go on over to augur.config.json in the Augur root directory. Find the key "Server" and set its "host" value to "localhost". Now in your python virtual environment (within WSL), in the Augur directory, run ```make rebuild``` to update this setting. Run the front and backends after this, and you should have a working Augur installation on Windows!
 
-NOTE: You may get errors on the install if you cloned Augur using Windows and not WSL. You may have to make sure that the scripts in augur/util/scripts/install all are using Unix line endings. If they aren't you can easily change them in a text editor. This is usually in the bottom right, and should look something like this (LF is Unix).
+NOTE: You may get errors on the install if you cloned Augur using Windows and not WSL. Make sure that the scripts in augur/util/scripts/install all are using Unix line endings. If they aren't you can easily change them in a text editor. This is usually in the bottom right, and should look something like this (LF is Unix).
 ![lineendings](images/lineendings.PNG)
 
 If it says CRLF, then you will need to change it.
