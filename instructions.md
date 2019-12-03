@@ -48,6 +48,8 @@ sudo apt-get install nodejs
 ```
 
 Check the version of your Node install and make sure that it's the latest release. You may have trouble installing the latest version of NodeJs. [NVM](https://github.com/nvm-sh/nvm) is great way to easily get it. If you didn't have any trouble getting the latest version, go ahead and skip this step.
+
+NVM Installation:
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
 
@@ -56,9 +58,9 @@ nvm install --lts
 
 ## PostgreSQL Setup
 
-You will need PostgreSQL on the linux subsystem for this to work. You can install [PostgreSQL](https://www.postgresql.org/download/windows/) for Windows if you want to use pgAdmin. This will automatically install postgres on the Windows side, so you will have postgres running in two places, Windows and WSL.
+You will need PostgreSQL on the linux subsystem for this to work. You can also install [PostgreSQL](https://www.postgresql.org/download/windows/) for Windows if you want to use pgAdmin. This will automatically install postgres on the Windows side, so you will have postgres running in two places, Windows and WSL.
 
-Now go into the subsystem using ```wsl``` and run the following:
+Go into the subsystem using ```wsl``` and run the following:
 ```
 sudo apt install postgresql postgresql-contrib
 ```
@@ -71,10 +73,9 @@ sudo /etc/init.d/postgresql start
 
 You will need to create the database (and the user) you intend to load Augur's schemas into BEFORE installing Augur. It has trouble creating the database on its own.
 
-To do this, you can access the postgress account, and then get to the postgres prompt with these commands:
+To do this, you can access the postgres account, and then get to the postgres prompt with these commands:
 ```
 sudo -i -u postgres
-
 psql
 ```
 From here, you can run the commands to create the user and database.
@@ -97,7 +98,7 @@ When you go to Augur install, you'll need to create the database and user first,
 ## Getting Augur
 
 Using GitBash for Windows, or just through the wsl terminal, clone Augur from its [repository](https://github.com/chaoss/augur).
-It is more risk free to do this on the subsystem.
+It is more risk free to do this on the Linux subsystem.
 
 ## Installation
 
@@ -116,7 +117,7 @@ sudo /etc/init.d/postgresql start
 ```
 (in wsl) before running Augur.
 
-Augur should now install just like on a Unix system. Make sure when it asks you if you'd like to create a database to select option 2, which will use the database you created earlier.
+Augur should now install just like on a Unix system. Make sure when it asks you if you'd like to create a database to select option 2, which will let you use the database you created earlier.
 
 ### Potential (Likely) Issues
 Once everything is done, the frontend will likely not work immediately. This is because the default server address is set to 0.0.0.0, which scares and confuses windows. Go on over to augur.config.json in the Augur root directory. Find the key "Server" and set its "host" value to "localhost". Now in your python virtual environment (within WSL), in the Augur directory, run ```make rebuild``` to update this setting. Run the front and backends after this, and you should have a working Augur installation on Windows!
@@ -124,4 +125,4 @@ Once everything is done, the frontend will likely not work immediately. This is 
 NOTE: You may get errors on the install if you cloned Augur using Windows and not WSL. Make sure that the scripts in augur/util/scripts/install all are using Unix line endings. If they aren't you can easily change them in a text editor. This is usually in the bottom right, and should look something like this (LF is Unix).
 ![lineendings](images/lineendings.PNG)
 
-If it says CRLF, then you will need to change it.
+If it says CRLF, then you will need to change it to LF.
