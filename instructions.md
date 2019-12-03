@@ -97,5 +97,10 @@ source newaugur/bin/activate
 Navigate to where you cloned the Augur repository. From the Augur directory, you can run ```make install``` to start the Augur installation.
 
 Augur should now install just like on a Unix system.
+Should you reboot your computer, you will need to start postgres again with
+```
+sudo /etc/init.d/postgresql start
+```
+(in wsl) before running Augur.
 
 NOTE: You may get errors on the install if you cloned Augur using Windows. You may have to make sure that the scripts in augur/util/scripts/install all are using Unix line endings. If they aren't you can easily change them in a text editor.
